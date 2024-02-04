@@ -1,44 +1,36 @@
-const tartaruga1 = {
-    nome: "Jurema",
-    idade: 4,
-    qtdDias: 16,
-    mtsDias: 30,
-    andou: function (){
-        const somaTotal = (this.mtsDias * this.qtdDias);
-        console.log(`
-            A tartaruga ${tartaruga1.nome} andou um total de ${somaTotal} em ${tartaruga1.qtdDias} dias, para chegar até o lago.
-        `);
-
+const tartarugas = [
+    {
+        nome: "Jurema",
+        idade: 4,
+        qtdDias: 16,
+        mtsDias: 30,
+      
     },
-
-};
-
-console.log(tartaruga1.andou());
-
-
- const tartaruga2 = {    
-    nome: "Biricléia",
-    idade: 8,
-    qtdDias: '',
-    mtsDias: 20,
-    }
-
+    {
+        nome: "Biricléia",
+        idade: 8,
+        qtdDias: '',
+        mtsDias: 20,
+}];
 
 const chegarAteOLago = 480;
-
-const somaChegadaTT2 = function (){
-    const soma = (chegarAteOLago / tartaruga2.mtsDias) - (tartaruga1.qtdDias)
-
-    return soma
-}
-
-console.log(`
-        A tartaruga ${tartaruga2.nome} demorou ${somaChegadaTT2(tartaruga2)} dias a mais que a tartaruga ${tartaruga1.nome} para chegar até o lago.
-
-`);
+const tartaruga1 = (tartarugas[0].qtdDias * tartarugas[0].mtsDias)
+const tartaruga2 = (chegarAteOLago / tartarugas[1].mtsDias) 
+const chegadaTt2 = (tartaruga2 - tartarugas[0].qtdDias)
+   
 
 
 
+const mostraDias = function () {
+        if (tartaruga1 === chegarAteOLago){
+            console.log(`A tartaruga ${tartarugas[0].nome} andou ${tartarugas[0].qtdDias} dias, para chegar até o lago.`);
+        }
+        if(tartaruga2 != tartaruga1){
+                console.log(`A tartaruga ${tartarugas[1].nome} andou um total de ${chegadaTt2} dias a mais que a tartaruga ${tartarugas[0].nome} para chegar até o lago dando um total de ${tartaruga2} dias.`)
+            }
+    }
+
+mostraDias(tartarugas);
 
 
 
